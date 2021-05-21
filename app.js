@@ -6,6 +6,9 @@ app.use(express.json());
 app.use(cors())
 app.use(express.json());
 app.use(require("./routers/app.router"));
+app.get('/', (req, res) => {
+    res.json({message:"welcome"});
+});
 mongoose.connect('mongodb+srv://MahmoudElwan:01015776658@mahmoudelwan-nodejs.jfspq.mongodb.net/sar', {useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
     console.log('connected');
 });
